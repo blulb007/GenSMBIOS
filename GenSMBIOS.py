@@ -326,7 +326,6 @@ class Smbios:
             self.u.grab("Press [enter] to return...")
             return
         self.u.head("{} SMBIOS Info".format(smbios[0][0]))
-        print(plist)
         f_string = "Type:         {}\nSerial:       {}\nBoard Serial: {}\nSmUUID:       {}"
         if self.gen_rom: f_string += "\nApple ROM:    {}" if self.rom_prefixes else "\nRandom ROM:   {}"
         print("\n\n".join([f_string.format(*x) for x in smbios]))
@@ -364,7 +363,7 @@ class Smbios:
             with open(self.plist, "wb") as f:
                 plist.dump(self.plist_data, f, sort_keys=False)
             # Got only valid keys now
-        print("")
+        print(plist_data)
         self.u.grab("Press [enter] to return...")
 
     def _list_current(self, macserial):
