@@ -1,9 +1,6 @@
 name: Run Project Command
 
-on:
-  push:
-    branches:
-      - main  # Run the workflow when pushing to the main branch
+
 
 jobs:
   run-command:
