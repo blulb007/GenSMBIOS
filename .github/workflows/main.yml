@@ -1,6 +1,7 @@
 name: Run Project Command
 
-
+on:
+  workflow_dispatch:
 
 jobs:
   run-command:
