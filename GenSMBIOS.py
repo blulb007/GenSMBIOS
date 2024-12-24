@@ -425,7 +425,7 @@ class Smbios:
         print("")
         print("Q. Quit")
         print("")
-        menu = 3;
+        menu = "3";
         if not len(menu):
             return
         if menu == "q":
