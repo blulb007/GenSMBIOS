@@ -313,8 +313,8 @@ class Smbios:
         menu = menu.split(" ")
         if len(menu) == 1:
             # Default of one time
-            smtype = menu[0]
-            times  = 1
+            smtype = "MacBookPro19,1"
+            times  = 5
         else:
             smtype = menu[0]
             try:
@@ -375,6 +375,7 @@ class Smbios:
                 self.plist_data["PlatformInfo"]["Generic"]["SystemSerialNumber"] = smbios[0][1]
                 self.plist_data["PlatformInfo"]["Generic"]["MLB"] = smbios[0][2]
                 self.plist_data["PlatformInfo"]["Generic"]["SystemUUID"] = smbios[0][3]
+                print(plist_data);
                 if self.gen_rom:
                     self.plist_data["PlatformInfo"]["Generic"]["ROM"] = plist.wrap_data(binascii.unhexlify(smbios[0][4].encode("utf-8")))
             with open(self.plist, "wb") as f:
