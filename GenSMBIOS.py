@@ -326,7 +326,7 @@ class Smbios:
             self.u.grab("Press [enter] to return...")
             return
         self.u.head("{} SMBIOS Info".format(smbios[0][0]))
-        print("")
+        print(plist)
         f_string = "Type:         {}\nSerial:       {}\nBoard Serial: {}\nSmUUID:       {}"
         if self.gen_rom: f_string += "\nApple ROM:    {}" if self.rom_prefixes else "\nRandom ROM:   {}"
         print("\n\n".join([f_string.format(*x) for x in smbios]))
