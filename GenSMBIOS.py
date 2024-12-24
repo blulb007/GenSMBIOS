@@ -363,7 +363,7 @@ class Smbios:
             with open(self.plist, "wb") as f:
                 plist.dump(self.plist_data, f, sort_keys=False)
             # Got only valid keys now
-        print(plist_data)
+        pprint(self.plist_data)
         self.u.grab("Press [enter] to return...")
 
     def _list_current(self, macserial):
