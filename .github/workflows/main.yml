@@ -1,0 +1,23 @@
+name: Run Project Command
+
+on:
+  push:
+    branches:
+      - main  # Run the workflow when pushing to the main branch
+
+jobs:
+  run-command:
+    runs-on: ubuntu-latest  # Use an Ubuntu environment
+    
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Make the script executable
+    - name: Make GenSMBIOS.command executable
+      run: chmod +x GenSMBIOS.command
+
+    # Step 3: Run the script
+    - name: Run GenSMBIOS.command
+      run: ./GenSMBIOS.command
