@@ -307,8 +307,8 @@ class Smbios:
         print("Please type the SMBIOS to gen and the number")
 
 
-            smtype = "MacBookPro19,1"
-            times  = 5
+        smtype = "MacBookPro19,1"
+        times  = 5
         
         # Keep it between 1 and 20
         if times < 1:
