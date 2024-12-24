@@ -305,28 +305,11 @@ class Smbios:
         print("Q. Quit")
         print("")
         print("Please type the SMBIOS to gen and the number")
-        menu = self.u.grab("of times to generate [max 20] (i.e. iMac18,3 5):  ")
-        if menu.lower() == "q":
-            self.u.custom_quit()
-        elif menu.lower() == "m":
-            return
-        menu = menu.split(" ")
-        if len(menu) == 1:
-            # Default of one time
+
+
             smtype = "MacBookPro19,1"
             times  = 5
-        else:
-            smtype = menu[0]
-            try:
-                times  = int(menu[1])
-            except:
-                self.u.head("Incorrect Input")
-                print("")
-                print("Incorrect format - must be SMBIOS times - i.e. iMac18,3 5")
-                print("")
-                self.u.grab("Press [enter] to return...")
-                self._generate_smbios(macserial)
-                return
+        
         # Keep it between 1 and 20
         if times < 1:
             times = 1
