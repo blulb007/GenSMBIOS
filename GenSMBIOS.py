@@ -425,7 +425,7 @@ class Smbios:
         print("")
         print("Q. Quit")
         print("")
-        menu = self.u.grab("Please select an option:  ").lower()
+        menu = 3;
         if not len(menu):
             return
         if menu == "q":
